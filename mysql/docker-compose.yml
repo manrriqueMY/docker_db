@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mysql:
+    container_name: db_mysql
+    restart: always
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: '123456' # TODO: Change this
+      MYSQL_USER: 'test'
+      MYSQL_PASS: 'pass'
+    volumes:
+      - volume:/var/lib/mysql
+    ports: 
+      - 3306:3306  
+volumes:
+  volume:

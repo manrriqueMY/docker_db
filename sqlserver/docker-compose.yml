@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mssql:
+    container_name: db_mssql
+    restart: always
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      ACCEPT_EULA: 'Y'
+      SA_PASSWORD: '123456'
+    volumes:
+      - volume:/var/opt/mssql/data
+    ports: 
+      - 1433:1433
+volumes:
+  volume:
