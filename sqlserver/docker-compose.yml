@@ -3,12 +3,13 @@ services:
   mssql:
     container_name: db_mssql
     restart: always
-    image: mcr.microsoft.com/mssql/server
+    image: mcr.microsoft.com/mssql/server:2019-latest
     environment:
       ACCEPT_EULA: 'Y'
       SA_PASSWORD: '123456'
+      MSSQL_PID: 'Express'
     volumes:
-      - volume:/var/opt/mssql/data
+      - volume:/var/opt/mssql
     ports: 
       - 1433:1433
 volumes:
