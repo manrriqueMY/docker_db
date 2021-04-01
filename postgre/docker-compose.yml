@@ -1,16 +1,15 @@
 version: '3'
 services:
-  mysql:
-    container_name: db_mysql
+  postgre:
+    container_name: db_postgre
     restart: always
-    image: mysql:5.7
+    image: postgres
+    restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: '123456' # TODO: Change this
-      MYSQL_USER: 'test'
-      MYSQL_PASS: 'pass'
+      POSTGRES_PASSWORD: "123456"
     volumes:
-      - volume:/var/lib/mysql
+      - volume:/var/lib/postgresql/data
     ports: 
-      - 3306:3306  
+      - 8080:8080  
 volumes:
   volume:
